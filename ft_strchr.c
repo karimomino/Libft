@@ -6,13 +6,13 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:16:00 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/28 18:33:38 by kamin            ###   ########.fr       */
+/*   Updated: 2021/09/28 18:36:35 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char *strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
 	int		len;
 	char	*string;
