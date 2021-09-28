@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 07:58:53 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/28 13:58:56 by kamin            ###   ########.fr       */
+/*   Created: 2021/09/28 13:59:44 by kamin             #+#    #+#             */
+/*   Updated: 2021/09/28 15:50:17 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	char	*source;
-	char	*destination;
-	char	*buff;
-	size_t	i;
+	int		size;
+	int		srcsize;
+	long	sdst;
 
-	source = (char *)src;
-	destination = dst;
-	buff = malloc(len * sizeof(char));
-	i = 0;
-	while (i++ < len)
+	size = ft_strlen(dst);
+	srcsize = ft_strlen(src);
+	sdst = dstsize;
+	if (sdst < size + 1)
+		return (sdst + srcsize);
+	else if (sdst > size + 1)
 	{
-		buff[i - 1] = source[i - 1];
+		while (src != NULL && (sdst-- - size - 1 > 0))
+		{
+			*(dst + size) = *src;
+			dst++;
+			src++;
+		}
+		*(dst + size) = '\0';
 	}
-	i = 0;
-	while (i++ < len)
-	{
-		destination[i - 1] = source[i - 1];
-	}
-	return (dst);
+	return (size + srcsize);
 }
