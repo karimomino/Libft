@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/27 18:01:50 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/28 12:36:08 by kamin            ###   ########.fr       */
+/*   Created: 2021/09/28 07:58:53 by kamin             #+#    #+#             */
+/*   Updated: 2021/09/28 12:52:17 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	const char	*source;
-	char		*destination;
+	char	*source;
+	char	*destination;
+	char	*buff;
+	size_t	i;
 
-	source = src;
+	source = (char *)src;
 	destination = dst;
-	while (n-- > 0)
+	buff = malloc(len * sizeof(char));
+	i = 0;
+	while (i++ < len)
 	{
-		*destination = *source;
-		destination++;
-		source++;
+		buff[i - 1] = source[i - 1];
+	}
+	i = 0;
+	while (i++ < len)
+	{
+		destination[i - 1] = source[i - 1];
 	}
 	return (dst);
 }
