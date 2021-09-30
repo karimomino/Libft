@@ -6,11 +6,13 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 16:04:45 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/28 16:06:07 by kamin            ###   ########.fr       */
+/*   Updated: 2021/09/30 10:35:20 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
 	int	retchar;
 

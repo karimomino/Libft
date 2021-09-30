@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 16:47:10 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/30 10:28:57 by kamin            ###   ########.fr       */
+/*   Created: 2021/09/30 12:21:39 by kamin             #+#    #+#             */
+/*   Updated: 2021/09/30 13:08:32 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	**ft_split(char const *s, char c)
 {
-	void	*ptr;
+	char	**split;
+	int		counter;
+	int		delcount;
 
-	ptr = (void *)malloc(count * size);
-	ft_bzero(ptr, count);
-	return (ptr);
+	counter = 0;
+	delcount = 0;
+	while (s != NULL)
+	{
+		if (s[counter] == c)
+			delcount++;
+		counter++;
+	}
+	split = (char **)malloc((delcount + 1) * sizeof(char *));
 }

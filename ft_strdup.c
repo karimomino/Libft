@@ -6,12 +6,11 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:46:43 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/29 19:24:25 by kamin            ###   ########.fr       */
+/*   Updated: 2021/09/30 10:28:04 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

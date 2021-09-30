@@ -6,12 +6,11 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 20:06:40 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/29 20:17:52 by kamin            ###   ########.fr       */
+/*   Updated: 2021/09/30 10:27:46 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

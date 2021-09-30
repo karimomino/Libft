@@ -6,11 +6,11 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:14:55 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/27 09:42:12 by kamin            ###   ########.fr       */
+/*   Updated: 2021/09/30 10:27:35 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

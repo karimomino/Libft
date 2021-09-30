@@ -6,11 +6,11 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:38:01 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/27 13:01:52 by kamin            ###   ########.fr       */
+/*   Updated: 2021/09/30 10:27:06 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
