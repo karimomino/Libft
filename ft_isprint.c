@@ -6,15 +6,15 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 11:48:39 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/30 10:28:38 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/03 11:30:07 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_print(int c)
+int	ft_isprint(int c)
 {
-	if (c >= 0 && c <= 127)
+	if (c > 31 && c < 127)
 	{
 		return (1);
 	}

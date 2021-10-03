@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 18:46:43 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/03 11:59:32 by kamin            ###   ########.fr       */
+/*   Created: 2021/10/03 11:31:53 by kamin             #+#    #+#             */
+/*   Updated: 2021/10/03 12:31:03 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*dup;
-	int		len;
-
-	len = ft_strlen(s1);
-	dup = (char *)malloc((len) * sizeof(char));
-	ft_strlcpy(dup, s1, len);
-	return (dup);
+	while (n-- > 0)
+	{
+		if (*s1 > *s2 || *s1 < *s2)
+			return ((unsigned char) *s1 - (unsigned char) *s2);
+		s1++;
+		s2++;
+	}
+	return (0);
 }

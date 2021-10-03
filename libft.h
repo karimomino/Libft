@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 10:01:22 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/30 12:22:58 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/03 11:31:42 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
-int		ft_print(int c);
+int		ft_isprint(int c);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
@@ -40,5 +40,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		toupper(int c);
 int		tolower(int c);
 char	**ft_split(char const *s, char c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
