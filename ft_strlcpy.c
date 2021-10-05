@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 15:31:24 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/03 12:33:39 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/05 15:00:33 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,17 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	counter = 0;
 	tried = 0;
 	while (src[tried] != '\0')
-	{
 		tried++;
-	}
-	while (src != NULL && counter < size)
+	if (ft_strlen(dst) > 0 && size > 0)
 	{
-		*dst = *src;
-		dst++;
-		src++;
-		counter++;
+		while (*src != 0 && counter < size - 1 && *dst != 0)
+		{
+			*dst = *src;
+			dst++;
+			src++;
+			counter++;
+		}
+		*dst = '\0';
 	}
-	*dst = '\0';
 	return (tried);
 }

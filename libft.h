@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 10:01:22 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/03 11:31:42 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/05 16:15:21 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int		toupper(int c);
 int		tolower(int c);
 char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strstr(const char *haystack, const char *needle, size_t len);
 
 #endif
