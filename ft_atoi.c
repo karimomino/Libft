@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:57:52 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/07 19:32:47 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/07 21:10:13 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,10 @@ int	ft_atoi(const char *str)
 	}
 	else if (*str == '+')
 		str++;
-	if (*str)
+	while (*str > 47 && *str < 58)
 	{
-		final *= 10;
-		final += *str - 48;
-		ft_atoi(++str);
+		final = (final * 10) + *str - 48;
+		str++;
 	}
 	return (final * sign);
-}
-
-int main()
-{
-	printf("%d", ft_atoi("-123456789"));
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:53:21 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/05 19:59:27 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/07 19:41:40 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ char	**ft_split(char const *s, char c)
 		counter++;
 	}
 	split = (char **)malloc((delcount + 1) * sizeof(char *));
+	return (split);
 }
