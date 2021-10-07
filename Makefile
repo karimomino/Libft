@@ -6,7 +6,7 @@
 #    By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/30 22:31:49 by kamin             #+#    #+#              #
-#    Updated: 2021/10/05 16:13:29 by kamin            ###   ########.fr        #
+#    Updated: 2021/10/05 21:36:50 by kamin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS			=	ft_bzero.c \
 					ft_memchr.c \
 					ft_strncmp.c \
 					ft_strnstr.c \
+					ft_memcmp.c \
 
 OBJS			= $(SRCS:.c=.o)
 

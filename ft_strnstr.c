@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 15:32:30 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/05 16:34:04 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/07 17:56:59 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,29 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	needle_size;
-	int	match;
-	int	offset;
+	int			size;
+	int			chara;
+	const char	*needle_cpy;
 
-	needle_size = ft_strlen(needle);
-	match = 0;
-	offset= 0;
-	if (!needle_size)
-		return ((char *)haystack);
-	while (*haystack != 0 && len > 0 && match == 0)
+	size = (int) len;
+	chara = (int) len;
+	needle_cpy = needle;
+	while (haystack && size > (int)len - ft_strlen(needle) && chara > 0)
 	{
-		match = 1;
-		offset = 0;
-		while (*(needle + offset) != 0 && match == 1)
+		if (*haystack == *needle_cpy)
 		{
-			if (*(needle + offset) == *(haystack + offset))
-				offset++;
-			else
-			{
-				haystack++;
-				match = 0;
-			}
+			needle_cpy++;
+			size--;
 		}
-		len--;
+		else
+		{
+			needle_cpy = needle;
+			size = len;
+		}
+		haystack++;
+		chara--;
 	}
-	if (match == 0)
+	if (size != (int)len - ft_strlen(needle))
 		return (NULL);
-	return ((char *)haystack);
+	return ((char *)haystack - ft_strlen(needle));
 }

@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/02 15:53:21 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/05 19:59:27 by kamin            ###   ########.fr       */
+/*   Created: 2021/10/07 17:57:52 by kamin             #+#    #+#             */
+/*   Updated: 2021/10/07 19:32:47 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+int	ft_atoi(const char *str)
 {
-	char	**split;
-	int		counter;
-	int		delcount;
+	int	final;
+	int	sign;
 
-	counter = 0;
-	delcount = 0;
-	while (s != NULL)
+	final = 0;
+	sign = 1;
+	if (*str == '-')
 	{
-		if (s[counter] == c)
-			delcount++;
-		counter++;
+		sign *= -1;
+		str++;
 	}
-	split = (char **)malloc((delcount + 1) * sizeof(char *));
+	else if (*str == '+')
+		str++;
+	if (*str)
+	{
+		final *= 10;
+		final += *str - 48;
+		ft_atoi(++str);
+	}
+	return (final * sign);
+}
+
+int main()
+{
+	printf("%d", ft_atoi("-123456789"));
+	return (0);
 }

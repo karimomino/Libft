@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/02 15:53:21 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/05 19:59:27 by kamin            ###   ########.fr       */
+/*   Created: 2021/10/05 20:21:15 by kamin             #+#    #+#             */
+/*   Updated: 2021/10/05 21:35:26 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	**split;
-	int		counter;
-	int		delcount;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	counter = 0;
-	delcount = 0;
-	while (s != NULL)
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (n-- > 0 && (*str1 != 0 || *str2 != 0))
 	{
-		if (s[counter] == c)
-			delcount++;
-		counter++;
+		if (*str1 > *str2 || *str1 < *str2)
+			return (*str1 - *str2);
+		str1++;
+		str2++;
 	}
-	split = (char **)malloc((delcount + 1) * sizeof(char *));
+	return (0);
 }
