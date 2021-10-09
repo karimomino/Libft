@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 15:32:30 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/07 23:33:00 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/09 05:30:42 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,29 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t			size;
-	size_t			chara;
-	const char		*needle_cpy;
+	size_t	i_hay;
+	size_t	i_needle;
+	int		match;
 
-	size = len;
-	chara = len;
-	needle_cpy = needle;
-	if (*haystack == 0)
-		return (NULL);
-	while (size > len - ft_strlen(needle) && chara-- > 0)
+	i_hay = 0;
+	i_needle = 0;
+	match = 0;
+	if (!needle[i_hay])
+		return ((char *)haystack);
+	while (haystack[i_hay] && match == 0 && i_hay < len)
 	{
-		if (*haystack == *needle_cpy)
+		match = 1;
+		i_needle = 0;
+		while (needle[i_needle] && match == 1 && (i_needle + i_hay) < len)
 		{
-			needle_cpy++;
-			size--;
+			if (haystack[i_hay + i_needle] == needle[i_needle])
+				i_needle++;
+			else
+				match = 0;
 		}
-		else
-		{
-			needle_cpy = needle;
-			size = len;
-		}
-		haystack++;
+		i_hay++;
 	}
-	if (size != len - ft_strlen(needle))
+	if (needle[i_needle])
 		return (NULL);
-	return ((char *)haystack - ft_strlen(needle));
+	return ((char *)haystack + i_hay - 1);
 }

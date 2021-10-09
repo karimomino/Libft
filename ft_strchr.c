@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/09 02:22:29 by kamin             #+#    #+#             */
+/*   Updated: 2021/10/09 02:28:02 by kamin            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -5,9 +17,11 @@ char	*ft_strchr(const char *s, int c)
 	int		len;
 	char	*string;
 
-	len = ft_strlen(s);
+	len = ft_strlen(s) + 1;
 	string = (char *)s;
-	while (len-- >= 0)
+	if (c > 127 || c < 0)
+		return (string);
+	while (len-- > 0)
 	{
 		if (*string == c)
 			return (string);
