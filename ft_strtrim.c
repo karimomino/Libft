@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 20:20:25 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/30 12:19:27 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/10 02:33:36 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	setlen = ft_strlen(set);
 	s1len = ft_strlen(s1);
-	while (ft_strchr(set, *(s1++)))
+	while (ft_strchr(set, *s1) && *s1)
+	{		
 		s1len--;
-	s1--;
-	while (ft_strchr(set, s1[s1len]))
+		s1++;
+	}
+	while (ft_strchr(set, s1[s1len]) && *s1)
 		s1len--;
 	s1len++;
 	trimmed = ft_substr(s1, 0, s1len);
