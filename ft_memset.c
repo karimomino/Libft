@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:27:10 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/30 10:28:21 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/11 18:19:36 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	char	*word;
 
 	counter = len;
-	word = b;
+	word = (char *)b;
 	while (counter > 0)
 	{
 		*word = c;

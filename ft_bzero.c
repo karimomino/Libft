@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:38:01 by kamin             #+#    #+#             */
-/*   Updated: 2021/09/30 10:27:06 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/11 18:26:09 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*string;
 
-	string = s;
+	string = (char *)s;
 	while (n-- > 0)
 	{
 		*string = '\0';
