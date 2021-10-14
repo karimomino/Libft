@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:53:21 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/14 04:02:52 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/15 00:14:25 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,3 +81,10 @@ char	**ft_split(char const *s, char c)
 	split[i] = 0;
 	return (split);
 }
+
+// int main()
+// {
+// 	char * * tab = ft_split("  tripouille  42  ", ' ');
+// 	free(tab);
+// 	return 0;
+// }
