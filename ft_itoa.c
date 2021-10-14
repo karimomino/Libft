@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:25:24 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/11 22:41:27 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/14 04:30:10 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ char *ft_itoa(int n)
 
 	nbr = n;
 	size = 1;
+	if (n < 0)
+		size++;
 	while(n /= 10)
 		size++;
-	number = (char *)malloc(size * sizeof(char));
+	number = (char *)malloc((size + 1) * sizeof(char));
 	if (!number)
 		return (NULL);
 	if (nbr == 0)
@@ -32,10 +34,10 @@ char *ft_itoa(int n)
 	}
 	if (nbr < 0)
 	{
-		size++;
 		number[0] = '-';
 		nbr *= -1;
 	}
+	number[size] = '\0';
 	while (nbr)
 	{
 		number[--size] = '0' + (nbr % 10);

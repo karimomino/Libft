@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 23:02:26 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/11 23:06:51 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/14 04:11:07 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	{
 		while (*s)
 		{
-			f(counter, *s);
+			f(counter, s);
 			counter++;
 			s++;
 		}

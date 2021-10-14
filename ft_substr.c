@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 19:26:47 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/09 05:46:42 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/13 15:43:38 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	if (len > ft_strlen(s))
 		len = (size_t)ft_strlen(s) - (size_t)start;
-	sub = (char *)malloc(len * sizeof(char));
+	sub = (char *)malloc(1 + len * sizeof(char));
 	if (sub == NULL)
 		return (NULL);
 	ft_strlcpy(sub, (s + start), len + 1);

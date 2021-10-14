@@ -6,11 +6,11 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 22:43:43 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/11 22:50:54 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/14 04:09:15 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -26,5 +26,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		*(s_f + counter) = f(counter, *(s_f + counter));
 		counter++;
 	}
-	retrun (s_f);
+	return (s_f);
 }

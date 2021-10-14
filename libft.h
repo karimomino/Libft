@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 10:01:22 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/12 00:28:02 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/14 04:44:51 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # include <stdio.h>
 

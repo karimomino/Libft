@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 23:14:19 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/11 23:15:03 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/14 04:54:57 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
-	write(fd, '\n', 1);
+	write(fd, "\n", 1);
 }
