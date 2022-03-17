@@ -32,15 +32,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(sub, (s + start), len + 1);
 	return (sub);
 }
-
-// #include "ft_strlen.c"
-// #include "ft_strlcpy.c"
-
-// int main()
-// {
-// 	char *str;
-// 	char *s;
-// 	str = strdup("0123456789");
-// 	s = ft_substr(str, 9, 10);
-// 	return 0;
-// }

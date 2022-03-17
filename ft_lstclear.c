@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 00:18:17 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/12 00:25:25 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/16 01:50:55 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (*lst)
 	{

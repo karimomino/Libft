@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_wc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
+/*   By: kamin <kamin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/02 15:53:21 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/16 02:09:59 by kamin            ###   ########.fr       */
+/*   Created: 2021/12/14 22:13:55 by kamin             #+#    #+#             */
+/*   Updated: 2022/03/17 13:05:36 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_word_count(char const *s, char c)
 	int	word_count;
 
 	word_count = 0;
-	while (*s == c && *s != '\0')
+	while (*s == c)
 		s++;
 	while (*s)
 	{
@@ -44,7 +44,7 @@ static char	**ft_alloc_split(char *sc, int wc, char c)
 {
 	char	**split;
 
-	while (*sc != '\0' && *sc == c)
+	while (*sc == c)
 		sc++;
 	if (ft_strlen(sc) == 0)
 		split = (char **)malloc(1 * sizeof(char *));
@@ -61,43 +61,37 @@ static char	**ft_alloc_words(char **split, char *sc, char c, int wc)
 	int	wl;
 
 	i = 0;
-	while (*sc == c)
-		sc++;
-	while (i < wc && *sc != '\0')
+	while (i < wc)
 	{
-		wl = ft_word_len(sc, c);
-		split[i] = (char *)malloc((wl + 1) * sizeof(char));
-		while (*sc == c && c != 0)
+		while (*sc == c)
 			sc++;
-		ft_strlcpy(split[i], sc, wl + 1);
-		sc += wl;
-		while (*sc == c && c != 0)
-			sc++;
+		if (*sc != '\0')
+		{
+			wl = ft_word_len(sc, c);
+			split[i] = (char *)malloc((wl + 1) * sizeof(char));
+			while (*sc == c && c != 0)
+				sc++;
+			ft_strlcpy(split[i], sc, wl + 1);
+			sc += wl;
+			while (*sc == c && c != 0)
+				sc++;
+		}
 		i++;
 	}
 	split[i] = 0;
 	return (split);
 }
 
-char	**ft_split(char const *s, char c)
+int	ft_split_wc(char const *s, char c, char ***sp)
 {
 	int		wc;
 	char	*sc;
-	char	**split;
 
 	sc = (char *)s;
 	wc = ft_word_count(sc, c);
-	split = ft_alloc_split(sc, wc, c);
+	*sp = ft_alloc_split(sc, wc, c);
 	if (wc == 0 || *sc == '\0')
-		return (split);
-	split = ft_alloc_words(split, sc, c, wc);
-	return (split);
+		return (0);
+	*sp = ft_alloc_words(*sp, sc, c, wc);
+	return (wc);
 }
-
-// #include "ft_strlcpy.c"
-// #include "ft_strlen.c"
-// int main()
-// {
-// 	char * * tab = ft_split("    ", ' ');
-// 	return (0);
-// }

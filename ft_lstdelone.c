@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 00:14:30 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/12 00:15:14 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/16 01:51:05 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if(lst)
+	if (lst)
 	{
 		del(lst->content);
 		free(lst);

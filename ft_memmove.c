@@ -6,7 +6,7 @@
 /*   By: kamin <kamin@42abudhabi.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 07:58:53 by kamin             #+#    #+#             */
-/*   Updated: 2021/10/03 12:47:09 by kamin            ###   ########.fr       */
+/*   Updated: 2021/10/16 01:50:21 by kamin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,28 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*source;
-	char	*destination;
-	char	buff[len * sizeof(char)];
-	size_t	i;
+	const char	*source;
+	char		*destination;
+	size_t		i;
 
-	source = (char *)src;
 	destination = (char *)dst;
+	source = (const char *)src;
 	i = 0;
-	if ((dst == NULL && src == NULL) && len > 0)
+	if ((!dst && !src))
 		return (NULL);
-	while (i++ < len)
+	if (source < destination)
 	{
-		buff[i - 1] = source[i - 1];
+		while (len-- > 0)
+			destination[len] = source[len];
 	}
-	i = 0;
-	while (i++ < len)
+	else
 	{
-		destination[i - 1] = buff[i - 1];
+		i = 0;
+		while (i < len)
+		{
+			destination[i] = source[i];
+			i++;
+		}
 	}
 	return (dst);
 }
